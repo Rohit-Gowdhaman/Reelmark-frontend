@@ -36,7 +36,7 @@ async function loadMyReviews() {
     try {
 
 const response = await authenticatedFetch(
-    '${API_BASE_URL}/api/reviews/my',
+    `${API_BASE_URL}/api/reviews/my`,
     {
         method: 'GET'
     }

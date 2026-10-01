@@ -133,7 +133,7 @@ async function loadReviews() {
     emptyState.style.display = 'none';
 
     const response = await fetch(
-      "${API_BASE_URL}/api/reviews"
+      `${API_BASE_URL}/api/reviews`
     );
 
     if (!response.ok) {

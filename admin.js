@@ -185,7 +185,7 @@ async function loadUsers() {
 
         const response =
             await fetch(
-                '${API_BASE_URL}/api/admin/users',
+                `${API_BASE_URL}/api/admin/users`,
                 {
                     method: 'GET',
 
@@ -705,7 +705,7 @@ async function loadReviews() {
 
         const response =
             await fetch(
-                '${API_BASE_URL}/api/admin/reviews',
+                `${API_BASE_URL}/api/admin/reviews`,
                 {
                     method: 'GET',
 
@@ -2015,7 +2015,7 @@ async function loadAnalytics() {
 
         const response =
             await fetch(
-                '${API_BASE_URL}/api/admin/analytics',
+                `${API_BASE_URL}/api/admin/analytics`,
                 {
                     method: 'GET',
 

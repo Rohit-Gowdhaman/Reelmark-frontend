@@ -788,7 +788,7 @@ reviewForm.addEventListener(
 
       const response =
         await authenticatedFetch(
-          '${API_BASE_URL}/api/reviews',
+          `${API_BASE_URL}/api/reviews`,
           {
             method: 'POST',
 
