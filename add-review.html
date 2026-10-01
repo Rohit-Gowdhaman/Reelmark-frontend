@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>REELMARK — Add Review</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg-layer" aria-hidden="true">
+
+    <div class="mesh-blob blob-a"></div>
+    <div class="mesh-blob blob-b"></div>
+    <div class="mesh-blob blob-c"></div>
+
+    <div class="grain"></div>
+
+    <div
+      class="cursor-spot"
+      id="cursorSpot"
+    ></div>
+
+  </div>
+
+
+  <!-- Header -->
+  <header>
+
+    <div class="wrap">
+
+      <div class="bar">
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+          <span class="mark">
+            REELMARK<span>.</span>
+          </span>
+        </a>
+
+        <a
+          href="index.html"
+          class="back-link"
+        >
+          ← Back to reviews
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- Add Review -->
+  <main class="add-review-page">
+
+    <div class="wrap">
+
+      <div class="review-form-header">
+
+        <div class="kicker">
+          Share your perspective
+        </div>
+
+        <h1>
+          Write a<br>
+          <em>movie review.</em>
+        </h1>
+
+        <p>
+          Tell us what you thought after the credits rolled.
+          Your review will be added to the REELMARK collection.
+        </p>
+
+      </div>
+
+
+      <!-- Form card -->
+      <section class="review-form-card ">
+
+        <!-- Decorative frame -->
+        <span class="db-dot tl"></span>
+        <span class="db-dot tr"></span>
+        <span class="db-dot br"></span>
+        <span class="db-dot bl"></span>
+
+        <span class="db-line h top"></span>
+        <span class="db-line h bottom"></span>
+        <span class="db-line v left"></span>
+        <span class="db-line v right"></span>
+
+
+        <div class="db-content">
+
+          <form id="reviewForm">
+
+
+            <!-- Movie information -->
+            <div class="form-section">
+
+              <div class="form-section-title">
+                <span>01</span>
+                Movie information
+              </div>
+
+
+              <div class="form-grid">
+
+
+                <!-- Title -->
+                <div class="form-field full">
+
+                  <label for="title">
+                    Movie title
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="title"
+                    placeholder="Enter movie title"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- Year -->
+                <div class="form-field">
+
+                  <label for="year">
+                    Release year
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="number"
+                    id="year"
+                    placeholder="e.g. 2024"
+                    min="1888"
+                    max="2100"
+                    required
+                  >
+
+                </div>
+
+                <!-- Fetch movie from OMDb -->
+<div class="form-field full">
+
+  <button
+    type="button"
+    id="fetchMovieBtn"
+    class="db-btn"
+  >
+    FETCH MOVIE FROM OMDb →
+  </button>
+
+  <small id="omdbMessage">
+    Enter the movie title and release year, then fetch movie details.
+  </small>
+
+</div>
+
+<!-- OMDb movie preview -->
+<div
+  id="moviePreview"
+  class="form-field full"
+  style="display: none;"
+>
+
+  <div style="
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid rgba(74, 95, 201, 0.35);
+    background: rgba(0, 0, 0, 0.25);
+  ">
+
+    <img
+      id="moviePoster"
+      src=""
+      alt="Movie poster"
+      style="
+        width: 120px;
+        max-height: 180px;
+        object-fit: cover;
+      "
+    >
+
+    <div>
+
+      <div
+        id="movieTitlePreview"
+        style="
+          font-size: 22px;
+          font-weight: 800;
+          margin-bottom: 10px;
+        "
+      ></div>
+
+      <div id="movieMetaPreview"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+                <!-- Genre -->
+                <div class="form-field">
+
+                  <label for="genre">
+                    Genre
+                    <span class="required">*</span>
+                  </label>
+
+                  <select
+                    id="genre"
+                    required
+                  >
+
+                    <option value="">
+                      Select genre
+                    </option>
+
+                    <option value="Drama">
+                      Drama
+                    </option>
+
+                    <option value="Thriller">
+                      Thriller
+                    </option>
+
+                    <option value="Sci-Fi">
+                      Sci-Fi
+                    </option>
+
+                    <option value="Comedy">
+                      Comedy
+                    </option>
+
+                    <option value="Horror">
+                      Horror
+                    </option>
+
+                    <option value="Animation">
+                      Animation
+                    </option>
+
+                  </select>
+
+                </div>
+
+
+                <!-- Director -->
+                <div class="form-field">
+
+                  <label for="director">
+                    Director
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="director"
+                    placeholder="e.g. Christopher Nolan"
+                    required
+                  >
+
+                </div>
+
+
+                <!-- Runtime -->
+                <div class="form-field">
+
+                  <label for="runtime">
+                    Runtime
+                    <span class="required">*</span>
+                  </label>
+
+                  <input
+                    type="number"
+                    id="runtime"
+                    placeholder="Minutes"
+                    min="1"
+                    required
+                  >
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+            <!-- Review -->
+            <div class="form-section">
+
+              <div class="form-section-title">
+                <span>02</span>
+                Your review
+              </div>
+
+
+              <!-- Rating -->
+              <div class="form-field">
+
+                <label for="rating">
+                  Rating
+                  <span class="required">*</span>
+                </label>
+
+                <input
+                  type="number"
+                  id="rating"
+                  min="0"
+                  max="5"
+                  step="0.5"
+                  placeholder="0 – 5"
+                  required
+                >
+
+                <small>
+                  Give the movie a rating from 0 to 5.
+                </small>
+
+              </div>
+
+
+              <!-- Blurb -->
+              <div class="form-field">
+
+                <div class="field-label-row">
+
+                  <label for="blurb">
+                    Short description
+                    <span class="required">*</span>
+                  </label>
+
+                  <span id="blurbCount">
+                    0 / 180
+                  </span>
+
+                </div>
+
+                <input
+                  type="text"
+                  id="blurb"
+                  maxlength="180"
+                  placeholder="A short description of your thoughts..."
+                  required
+                >
+
+              </div>
+
+
+              <!-- Full review -->
+              <div class="form-field">
+
+                <div class="field-label-row">
+
+                  <label for="review">
+                    Full review
+                    <span class="required">*</span>
+                  </label>
+
+                  <span id="reviewCount">
+                    0 / 2000
+                  </span>
+
+                </div>
+
+                <textarea
+                  id="review"
+                  maxlength="2000"
+                  placeholder="What worked? What didn't? Tell us what you really thought..."
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <!-- Verdict -->
+              <div class="form-field">
+
+                <label for="verdict">
+                  Verdict
+                  <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="verdict"
+                  placeholder="e.g. A beautiful film worth watching twice."
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- Author -->
+            <div class="form-section">
+
+              <div class="form-section-title">
+                <span>03</span>
+                About you
+              </div>
+
+
+              <div class="form-field">
+
+                <label for="critic">
+                  Your name
+                  <span class="required">*</span>
+                </label>
+
+                <input
+                  type="text"
+                  id="critic"
+                  placeholder="Enter your name"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <!-- Submit -->
+            <div class="form-actions">
+
+              <a
+                href="index.html"
+                class="form-cancel"
+              >
+                Cancel
+              </a>
+
+              <button
+                type="submit"
+                class="db-btn publish-btn"
+              >
+                Publish Review →
+              </button>
+
+            </div>
+
+
+            <p
+              id="formMessage"
+              class="form-message"
+            ></p>
+
+
+          </form>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="wrap foot-row">
+
+      <span class="mark">
+        REELMARK
+      </span>
+
+      <span class="note">
+        Independently written · one review per sitting
+      </span>
+
+    </div>
+
+  </footer>
+   
+  <script src="config.js"></script>
+  <script src="session.js"></script>
+  <script src="review-form.js"></script>
+  <script src="auth.js"></script>
+  
+</body>
+</html>

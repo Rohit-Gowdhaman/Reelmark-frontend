@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>REELMARK — My Profile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div class="bg-layer" aria-hidden="true">
+    <div class="mesh-blob blob-a"></div>
+    <div class="mesh-blob blob-b"></div>
+    <div class="mesh-blob blob-c"></div>
+    <div class="grain"></div>
+  </div>
+
+
+  <!-- HEADER -->
+  <header class="profile-header">
+
+    <div class="wrap">
+
+      <div class="profile-nav">
+
+        <!-- Logo -->
+        <a href="index.html" class="brand">
+          <span class="mark">REELMARK<span>.</span></span>
+        </a>
+
+        <!-- Back Home -->
+        <a href="index.html" class="profile-home-btn">
+          ← Home
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- PROFILE -->
+  <main class="profile-page">
+
+    <div class="wrap">
+
+      <!-- Profile information -->
+      <section class="profile-card">
+
+        <div class="profile-kicker">
+          YOUR ACCOUNT
+        </div>
+
+        <h1 id="profileName">
+          Loading...
+        </h1>
+
+        <p id="profileEmail">
+          Loading...
+        </p>
+
+        <div class="profile-stats">
+
+  <div class="profile-stat">
+    <span class="profile-stat-value" id="profileReviewTotal">0</span>
+    <span class="profile-stat-label">TOTAL REVIEWS</span>
+  </div>
+
+  <div class="profile-stat">
+    <span class="profile-stat-value" id="profileAverageRating">0.0</span>
+    <span class="profile-stat-label">AVERAGE RATING</span>
+  </div>
+
+</div>
+
+      </section>
+
+
+      <!-- MY REVIEWS -->
+      <section class="my-reviews-section">
+
+        <div class="my-reviews-heading">
+
+          <div>
+            <span class="profile-kicker">
+              YOUR CONTRIBUTIONS
+            </span>
+
+            <h2>
+              My Reviews
+            </h2>
+          </div>
+
+          <span class="my-review-count" id="myReviewCount">
+            0 reviews
+          </span>
+
+        </div>
+
+
+        <!-- Reviews will be inserted here by JavaScript -->
+        <div
+          class="my-reviews-grid"
+          id="myReviewsGrid">
+        </div>
+
+
+        <!-- Empty state -->
+        <div
+          class="my-reviews-empty"
+          id="myReviewsEmpty"
+          style="display: none;">
+
+          <h3>No reviews yet.</h3>
+
+          <p>
+            You haven't written any reviews yet.
+          </p>
+
+          <a
+            href="add-review.html"
+            class="db-btn">
+            Write your first review +
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+
+    <div class="wrap foot-row">
+
+      <span class="mark">
+        REELMARK
+      </span>
+
+      <span class="note">
+        Independently written · one review per sitting
+      </span>
+
+    </div>
+
+  </footer>
+  
+  <script src="config.js"></script>
+  <script src="session.js"></script>
+  <!-- Authentication protection -->
+  <script src="auth.js"></script>
+  <!-- Profile functionality -->
+  <script src="profile.js"></script>
+
+</body>
+</html>

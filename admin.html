@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>REELMARK — Admin Dashboard</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         BACKGROUND
+    =========================================== -->
+
+    <div
+        class="bg-layer"
+        aria-hidden="true"
+    >
+
+        <div class="mesh-blob blob-a"></div>
+
+        <div class="mesh-blob blob-b"></div>
+
+        <div class="mesh-blob blob-c"></div>
+
+        <div class="grain"></div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="profile-header">
+
+        <div class="wrap">
+
+            <div class="profile-nav">
+
+                <a
+                    href="index.html"
+                    class="brand"
+                >
+
+                    <span class="mark">
+
+                        REELMARK<span>.</span>
+
+                    </span>
+
+                </a>
+
+
+                <div
+                    style="
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                    "
+                >
+
+                    <a
+                        href="profile.html"
+                        class="profile-home-btn"
+                    >
+                        My Profile
+                    </a>
+
+
+                    <a
+                        href="index.html"
+                        class="profile-home-btn"
+                    >
+                        ← Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN
+    =========================================== -->
+
+    <main class="profile-page">
+
+        <div class="wrap">
+
+
+            <!-- ======================================
+                 ADMIN WELCOME
+            ======================================= -->
+
+            <section class="profile-card">
+
+                <div class="profile-kicker">
+                    ADMIN PANEL
+                </div>
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p id="adminWelcome">
+                    Loading admin information...
+                </p>
+
+            </section>
+
+
+
+            <!-- ==========================================
+                 ADMIN ANALYTICS
+            =========================================== -->
+
+            <section class="my-reviews-section">
+
+
+                <!-- ANALYTICS HEADING -->
+
+                <div class="my-reviews-heading">
+
+                    <div>
+
+                        <span class="profile-kicker">
+                            OVERVIEW
+                        </span>
+
+                        <h2>
+                            Dashboard Analytics
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ======================================
+                     QUICK ANALYTICS
+                ======================================= -->
+
+                <div class="admin-analytics-grid">
+
+
+                    <!-- TOTAL REVIEWS -->
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+                            🎬
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <div class="admin-stat-label">
+                                TOTAL REVIEWS
+                            </div>
+
+                            <div
+                                class="admin-stat-value"
+                                id="totalReviews"
+                            >
+                                0
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- AVERAGE RATING -->
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-icon">
+                            ⭐
+                        </div>
+
+                        <div class="admin-stat-content">
+
+                            <div class="admin-stat-label">
+                                AVERAGE RATING
+                            </div>
+
+                            <div
+                                class="admin-stat-value"
+                                id="averageRating"
+                            >
+                                0.0
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- ======================================
+                     USER STATISTICS + REVIEWS BY YEAR
+                ======================================= -->
+
+                <div class="admin-analytics-secondary-grid">
+
+
+                    <!-- ==================================
+                         USER STATISTICS
+                    =================================== -->
+
+                    <article class="admin-analytics-panel">
+
+                        <div class="admin-panel-heading">
+
+                            <span class="profile-kicker">
+                                USER BREAKDOWN
+                            </span>
+
+                            <h3>
+                                User Statistics
+                            </h3>
+
+                        </div>
+
+
+                        <div class="admin-breakdown-list">
+
+
+                            <!-- ADMINS -->
+
+                            <div class="admin-breakdown-item">
+
+                                <div>
+
+                                    <span class="admin-breakdown-title">
+                                        Administrators
+                                    </span>
+
+                                    <span class="admin-breakdown-description">
+                                        Users with admin access
+                                    </span>
+
+                                </div>
+
+                                <strong
+                                    id="totalAdmins"
+                                >
+                                    0
+                                </strong>
+
+                            </div>
+
+
+
+                            <!-- NORMAL USERS -->
+
+                            <div class="admin-breakdown-item">
+
+                                <div>
+
+                                    <span class="admin-breakdown-title">
+                                        Normal Users
+                                    </span>
+
+                                    <span class="admin-breakdown-description">
+                                        Regular registered users
+                                    </span>
+
+                                </div>
+
+                                <strong
+                                    id="totalNormalUsers"
+                                >
+                                    0
+                                </strong>
+
+                            </div>
+
+
+
+                            <!-- TOTAL ACCOUNTS -->
+
+                            <div class="admin-breakdown-item">
+
+                                <div>
+
+                                    <span class="admin-breakdown-title">
+                                        Total Accounts
+                                    </span>
+
+                                    <span class="admin-breakdown-description">
+                                        All registered accounts
+                                    </span>
+
+                                </div>
+
+                                <strong
+                                    id="analyticsTotalUsers"
+                                >
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- ==================================
+                         REVIEWS BY YEAR
+                    =================================== -->
+
+                    <article class="admin-analytics-panel">
+
+                        <div class="admin-panel-heading">
+
+                            <span class="profile-kicker">
+                                ACTIVITY
+                            </span>
+
+                            <h3>
+                                Reviews by Year
+                            </h3>
+
+                        </div>
+
+
+                        <div
+                            class="admin-year-list"
+                            id="reviewsByYear"
+                        >
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- ======================================
+                     REVIEWS BY GENRE
+                ======================================= -->
+
+                <article
+                    class="
+                        admin-analytics-panel
+                        admin-genre-panel
+                    "
+                >
+
+                    <div class="admin-panel-heading">
+
+                        <span class="profile-kicker">
+                            CONTENT
+                        </span>
+
+                        <h3>
+                            Reviews by Genre
+                        </h3>
+
+                    </div>
+
+
+                    <div
+                        class="admin-genre-list"
+                        id="reviewsByGenre"
+                    >
+                    </div>
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- ==========================================
+                 USERS
+            =========================================== -->
+
+            <section class="my-reviews-section">
+
+
+                <div class="my-reviews-heading">
+
+                    <div>
+
+                        <span class="profile-kicker">
+                            USER MANAGEMENT
+                        </span>
+
+                        <h2>
+                            All Users
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        class="my-review-count"
+                        id="userCount"
+                    >
+                        0 users
+                    </span>
+
+                </div>
+
+
+
+                <div
+                    class="my-reviews-grid"
+                    id="usersGrid"
+                >
+                </div>
+
+
+
+                <div
+                    class="my-reviews-empty"
+                    id="usersEmpty"
+                    style="display: none;"
+                >
+
+                    <h3>
+                        No users found.
+                    </h3>
+
+                    <p>
+                        There are currently no registered users.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==========================================
+                 REVIEW MANAGEMENT
+            =========================================== -->
+
+            <section class="my-reviews-section">
+
+
+                <div class="my-reviews-heading">
+
+                    <div>
+
+                        <span class="profile-kicker">
+                            REVIEW MANAGEMENT
+                        </span>
+
+                        <h2>
+                            All Reviews
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        class="my-review-count"
+                        id="reviewCount"
+                    >
+                        0 reviews
+                    </span>
+
+                </div>
+
+
+
+                <!-- ======================================
+                     REVIEW SEARCH & FILTERS
+                ======================================= -->
+
+                <div class="admin-review-filters">
+
+
+                    <!-- SEARCH -->
+
+                    <div class="admin-search-box">
+
+                        <label for="reviewSearch">
+                            Search Reviews
+                        </label>
+
+                        <input
+                            type="text"
+                            id="reviewSearch"
+                            placeholder="Search by movie, director, user or email..."
+                        >
+
+                    </div>
+
+
+
+                    <!-- FILTER ROW -->
+
+                    <div class="admin-filter-row">
+
+
+                        <!-- GENRE -->
+
+                        <div class="admin-filter-box">
+
+                            <label for="genreFilter">
+                                Genre
+                            </label>
+
+                            <select id="genreFilter">
+
+                                <option value="all">
+                                    All Genres
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- RATING -->
+
+                        <div class="admin-filter-box">
+
+                            <label for="ratingFilter">
+                                Rating
+                            </label>
+
+                            <select id="ratingFilter">
+
+                                <option value="all">
+                                    All Ratings
+                                </option>
+
+                                <option value="9">
+                                    9+ ⭐
+                                </option>
+
+                                <option value="8">
+                                    8+ ⭐
+                                </option>
+
+                                <option value="7">
+                                    7+ ⭐
+                                </option>
+
+                                <option value="6">
+                                    6+ ⭐
+                                </option>
+
+                                <option value="5">
+                                    5+ ⭐
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- YEAR -->
+
+                        <div class="admin-filter-box">
+
+                            <label for="yearFilter">
+                                Year
+                            </label>
+
+                            <select id="yearFilter">
+
+                                <option value="all">
+                                    All Years
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- RESET -->
+
+                        <div class="admin-filter-box">
+
+                            <label>
+                                &nbsp;
+                            </label>
+
+                            <button
+                                type="button"
+                                id="resetReviewFilters"
+                                class="admin-reset-btn"
+                            >
+                                Reset Filters
+                            </button>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- REVIEWS GRID -->
+
+                <div
+                    class="my-reviews-grid"
+                    id="reviewsGrid"
+                >
+                </div>
+
+
+
+                <!-- EMPTY REVIEWS -->
+
+                <div
+                    class="my-reviews-empty"
+                    id="reviewsEmpty"
+                    style="display: none;"
+                >
+
+                    <h3>
+                        No reviews found.
+                    </h3>
+
+                    <p>
+                        There are currently no reviews.
+                    </p>
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        <div class="wrap foot-row">
+
+            <span class="mark">
+                REELMARK
+            </span>
+
+            <span class="note">
+                Administrator dashboard
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         EDIT REVIEW MODAL
+    =========================================== -->
+
+    <div
+        class="edit-review-modal"
+        id="editReviewModal"
+        style="display: none;"
+    >
+
+        <div class="edit-review-overlay"></div>
+
+
+        <div class="edit-review-box">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="edit-review-header">
+
+                <div>
+
+                    <span class="profile-kicker">
+                        REVIEW MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Edit Review
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="edit-review-close"
+                    id="closeEditReview"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <!-- EDIT FORM -->
+
+            <form id="editReviewForm">
+
+
+                <input
+                    type="hidden"
+                    id="editReviewId"
+                >
+
+
+
+                <!-- TITLE -->
+
+                <div class="edit-form-group">
+
+                    <label for="editTitle">
+                        Movie Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editTitle"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- YEAR + GENRE -->
+
+                <div class="edit-form-row">
+
+
+                    <div class="edit-form-group">
+
+                        <label for="editYear">
+                            Year
+                        </label>
+
+                        <input
+                            type="number"
+                            id="editYear"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="edit-form-group">
+
+                        <label for="editGenre">
+                            Genre
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editGenre"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- DIRECTOR + RUNTIME -->
+
+                <div class="edit-form-row">
+
+
+                    <div class="edit-form-group">
+
+                        <label for="editDirector">
+                            Director
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editDirector"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <div class="edit-form-group">
+
+                        <label for="editRuntime">
+                            Runtime (minutes)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="editRuntime"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- RATING -->
+
+                <div class="edit-form-group">
+
+                    <label for="editRating">
+                        Rating
+                    </label>
+
+                    <input
+                        type="number"
+                        id="editRating"
+                        min="0"
+                        max="10"
+                        step="0.1"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- BLURB -->
+
+                <div class="edit-form-group">
+
+                    <label for="editBlurb">
+                        Short Blurb
+                    </label>
+
+                    <textarea
+                        id="editBlurb"
+                        rows="3"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- REVIEW -->
+
+                <div class="edit-form-group">
+
+                    <label for="editReview">
+                        Review
+                    </label>
+
+                    <textarea
+                        id="editReview"
+                        rows="7"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+
+                <!-- VERDICT -->
+
+                <div class="edit-form-group">
+
+                    <label for="editVerdict">
+                        Verdict
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editVerdict"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- ICON -->
+
+                <div class="edit-form-group">
+
+                    <label for="editIcon">
+                        Icon
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editIcon"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- COLORS -->
+
+                <div class="edit-form-group">
+
+                    <label for="editColors">
+                        Colors
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editColors"
+                        placeholder='["#3a2a18","#000000"]'
+                        required
+                    >
+
+                    <small>
+                        Example:
+                        ["#3a2a18","#000000"]
+                    </small>
+
+                </div>
+
+
+
+                <!-- TAGS -->
+
+                <div class="edit-form-group">
+
+                    <label for="editTags">
+                        Tags
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editTags"
+                        placeholder='["Slow Burn","Family Drama"]'
+                        required
+                    >
+
+                    <small>
+                        Example:
+                        ["Slow Burn","Family Drama"]
+                    </small>
+
+                </div>
+
+
+
+                <!-- CRITIC -->
+
+                <div class="edit-form-group">
+
+                    <label for="editCritic">
+                        Critic
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editCritic"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- PUBLISHED -->
+
+                <div class="edit-form-group">
+
+                    <label for="editPublished">
+                        Published
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editPublished"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- FORM BUTTONS -->
+
+                <div class="edit-form-actions">
+
+
+                    <button
+                        type="button"
+                        class="edit-cancel-btn"
+                        id="cancelEditReview"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="edit-save-btn"
+                    >
+                        Save Changes
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+    <script src="config.js"></script>
+    <script src="admin.js"></script>
+
+
+</body>
+
+</html>

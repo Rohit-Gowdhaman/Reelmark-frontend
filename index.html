@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REELMARK — Film Reviews</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ambient background layers: mesh blobs + cursor spotlight + grain -->
+<div class="bg-layer" aria-hidden="true">
+  <div class="mesh-blob blob-a"></div>
+  <div class="mesh-blob blob-b"></div>
+  <div class="mesh-blob blob-c"></div>
+  <div class="grain"></div>
+  <div class="cursor-spot" id="cursorSpot"></div>
+</div>
+
+<header>
+  <div class="wrap">
+    <div class="bar">
+      <a href="#top" class="brand"><span class="mark">REELMARK<span>.</span></span></a>
+      <div class="search db-frame">
+        <span class="db-dot tl"></span><span class="db-dot tr"></span><span class="db-dot br"></span><span class="db-dot bl"></span>
+        <span class="db-line h top"></span><span class="db-line h bottom"></span><span class="db-line v left"></span><span class="db-line v right"></span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="text" placeholder="Search a title or director…" aria-label="Search reviews">
+      </div>
+    <span class="user-name" id="userName"></span>
+
+    <a
+  href="profile.html"
+  class="profile-btn"
+  id="profileBtn"
+  style="display: none;">
+  PROFILE
+</a>
+
+        <a
+        href="admin.html"
+        class="admin-btn"
+        id="adminBtn"
+        style="display: none;">
+        Admin Dashboard
+    </a>
+
+  <a href="login.html" class="login-btn" id="loginBtn">
+    Login
+  </a>
+    </div>
+    <nav class="pills" id="genrePills" aria-label="Filter by genre"></nav>
+    <div class="sort-row">
+      <label for="sortSelect">Sort</label>
+      <select id="sortSelect">
+        <option value="default">Featured</option>
+        <option value="rating-desc">Rating — high to low</option>
+        <option value="rating-asc">Rating — low to high</option>
+        <option value="year-desc">Newest first</option>
+        <option value="year-asc">Oldest first</option>
+        <option value="az">Title A–Z</option>
+      </select>
+    </div>
+  </div>
+  
+</header>
+
+
+<section class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div class="kicker">Reviews, written after the credits roll</div>
+    <h1 class="headline">Every frame,<br><em>watched twice</em><br>before it's judged.</h1>
+    <p class="lede">No embargoes, no junket quotes. Search, filter, and sort your way through this week's reviews — or step through them one after another like a proper screening.</p>
+    <div class="cta-row">
+      <a href="#gridSection" class="db-btn magnetic" id="scrollToGrid">Browse the reviews →</a>
+      <button class="db-btn ghost magnetic" id="shuffleBtn">Shuffle a pick</button>
+     <a href="add-review.html" class="db-btn">Add a review +</a>
+      <span class="live-count">Now tracking <b id="heroCount">0</b> reviews</span>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-row">
+  <div class="wrap"><div class="ticker" id="ticker"></div></div>
+</div>
+
+  </form>
+
+  <p id="formMessage"></p>
+
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews wrap" id="gridSection">
+  <div class="section-head">
+    <h2>All reviews</h2>
+    <span class="live-count" id="resultCount"></span>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div
+  class="reviews-status"
+  id="reviewsStatus"
+  style="display: none;">
+</div>
+
+  <div class="empty" id="emptyState" style="display:none;">
+    No reviews match that search. Try a different title, director, or genre.
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <span class="mark">REELMARK</span>
+    <span class="note">Independently written · one review per sitting</span>
+  </div>
+</footer>
+
+<div class="backdrop" id="backdrop" role="dialog" aria-modal="true">
+  <div class="modal db-frame" id="modal" style="--radius:8px;">
+    <span class="db-dot tl"></span><span class="db-dot tr"></span><span class="db-dot br"></span><span class="db-dot bl"></span>
+    <span class="db-line h top"></span><span class="db-line h bottom"></span><span class="db-line v left"></span><span class="db-line v right"></span>
+    <div class="db-content" id="modalContent"></div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="session.js"></script>
+<script src="script.js"></script>
+<script src="review-form.js"></script>
+
+</body>
+</html>
