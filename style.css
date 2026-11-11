@@ -7295,3 +7295,107 @@ body:has(#backdrop.open) .blob {
   }
 
 }
+
+/* ==========================================================
+   MOBILE — MOVIE CARD GRID ONLY
+   Phones: 2 clean columns with proper side spacing.
+   Very small phones: 1 column.
+   (Desktop layout above is untouched.)
+   ========================================================== */
+
+@media (max-width: 760px){
+
+  /* the section's own padding shorthand removed the .wrap side padding,
+     so cards were touching the screen edges */
+  section.reviews{
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    perspective: none;
+  }
+
+  .card .poster-title{
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    font-size: 16px;
+    line-height: 1.05;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  .card .genre-tag{
+    top: 8px;
+    left: 8px;
+    max-width: 58%;
+    font-size: 8px;
+    padding: 4px 7px;
+  }
+
+  .card .rating-badge{
+    top: 8px;
+    right: 8px;
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+
+  .card .body{
+    padding: 12px 12px 14px;
+    gap: 8px;
+  }
+
+  .card .meta{
+    flex-wrap: wrap;
+    gap: 2px 6px;
+    font-size: 9px;
+    line-height: 1.45;
+    letter-spacing: .03em;
+    overflow-wrap: anywhere;
+  }
+
+  .card p.blurb{
+    font-size: 12px;
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .card .foot{
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    padding-top: 9px;
+  }
+
+  .readmore{
+    font-size: 8.5px;
+    letter-spacing: .05em;
+  }
+
+}
+
+@media (max-width: 340px){
+
+  .grid{
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* touch screens: don't leave cards "lifted" after a tap */
+@media (hover: none){
+
+  .card:hover{
+    transform: none;
+  }
+
+  .card:hover .poster img{
+    transform: none;
+  }
+
+}
